@@ -1,13 +1,19 @@
 
 public class OfferFactory {
 
-    Public Offer makeOffer(String type) {
+    Public Offer MakeOffer(String type) {
 
         if(type.equals("car")) {
-            offer = new CarOffer;
+            Offer = new CarOffer();
+        } else if (type.equals("motorbike")) {
+            Offer = new MotorbikeOffer();
+        } else if (type.equals("boat")) {
+            Offer = new BoatOffer();
+        }
+        return Offer;
         }
     }
 
 
-}
+
 
