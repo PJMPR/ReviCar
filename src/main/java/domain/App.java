@@ -22,7 +22,7 @@ public class App {
 			seller.setName("aaa");
 			seller.setSurname("aaaaa");
 			seller.setTel_number(111222333);
-			seller.setMail("aaa@aaa.pl");
+			seller.setMail("aaa@aaa.pl"); 
 			seller.setTown("ttt");
 			seller.setPost_code("80-111");
 			
