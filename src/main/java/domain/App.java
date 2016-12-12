@@ -19,25 +19,25 @@ public class App {
 			IRepositoryCatalog catalog = new RepositoryCatalog(new UnitOfWork(connection), connection);
 			
 			Seller seller = new Seller();
-			seller.setName("aaa");
-			seller.setSurname("aaaaa");
-			seller.setTel_number(111222333);
-			seller.setMail("aaa@aaa.pl"); 
-			seller.setTown("ttt");
-			seller.setPost_code("80-111");
+			seller.setName("Kuba");
+			seller.setSurname("Piórkowski");
+			seller.setTel_number(698754856);
+			seller.setMail("kubamotors@dmail.ne"); 
+			seller.setTown("Władysławowo");
+			seller.setPost_code("84-100");
 			
 			Car car = new Car();
-			car.setVehtype("aaa");
-			car.setMake("bbb");
-			car.setModel("ccc");
-			car.setYear(1990);
+			car.setVehtype("SUV");
+			car.setMake("Maserati");
+			car.setModel("Levante S");
+			car.setYear(2016);
 			
 			Offer offer = new Offer();
-			offer.setTitle("aaa");
-			offer.setDesc("bbb");
-			offer.setUploaded(new Date(111-11-11));
-			offer.setSeller_id(0);
-			offer.setCar_id(0);
+			offer.setTitle("New Maserati Levante S");
+			offer.setDesc("New car, straight from Modena, ideal gift. For more info email me.");
+			offer.setUploaded(new Date(2016-12-23));
+			offer.setSeller_id(1);
+			offer.setCar_id(1);
 			
 			catalog.sellers().add(seller);
 			catalog.cars().add(car);
