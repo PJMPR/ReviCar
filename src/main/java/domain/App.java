@@ -13,6 +13,7 @@ import domain.model.Offer;
 import domain.model.Seller;
 
 public class App {
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/workdb");
@@ -33,9 +34,9 @@ public class App {
 			car.setYear(2016);
 			
 			Offer offer = new Offer();
-			offer.setTitle("New Maserati Levante S");
-			offer.setDesc("New car, straight from Modena, ideal gift. For more info email me.");
-			offer.setUploaded(new Date(2016-12-23));
+			offer.setTitle("New Maserati");
+			offer.setDesc("New car, straight from Modena.");
+			offer.setUploaded(new Date(2016, 12, 23));
 			offer.setSeller_id(1);
 			offer.setCar_id(1);
 			
