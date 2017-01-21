@@ -36,9 +36,7 @@ public class App {
 			Offer offer = new Offer();
 			offer.setTitle("New Maserati");
 			offer.setDesc("New car, straight from Modena.");
-			offer.setUploaded(new Date(2016, 12, 23));
-			offer.setSeller_id(1);
-			offer.setCar_id(1);
+			offer.setUploaded(new Date(116, 12, 23));
 			
 			catalog.sellers().add(seller);
 			catalog.cars().add(car);

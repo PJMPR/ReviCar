@@ -47,7 +47,7 @@ public class SellerRepository extends RepositoryBase<Seller> implements ISellerR
 				+ "name VARCHAR(20),"
 				+ "surname VARCHAR(50),"
 				+ "tel_number INT,"
-				+ "mail VARCHAR(20),"
+				+ "mail VARCHAR(50),"
 				+ "town VARCHAR(20),"
 				+ "post_code VARCHAR(20)"
 				+ ")";

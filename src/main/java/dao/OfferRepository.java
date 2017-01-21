@@ -19,8 +19,8 @@ public class OfferRepository extends RepositoryBase<Offer> implements IOfferRepo
 		insert.setString(1, entity.getTitle());
 		insert.setString(2, entity.getDesc());
 		insert.setDate(3, entity.getUploaded());
-		insert.setInt(4, entity.getSeller_id());
-		insert.setInt(5, entity.getCar_id());
+		insert.setInt(4, entity.getSeller_id().getId());
+		insert.setInt(5, entity.getCar_id().getId());
 	}
 
 	@Override
@@ -28,8 +28,8 @@ public class OfferRepository extends RepositoryBase<Offer> implements IOfferRepo
 		update.setString(1, entity.getTitle());
 		update.setString(2, entity.getDesc());
 		update.setDate(3, entity.getUploaded());
-		update.setInt(4, entity.getSeller_id());
-		update.setInt(5, entity.getCar_id());
+		update.setInt(4, entity.getSeller_id().getId());
+		update.setInt(5, entity.getCar_id().getId());
 		update.setInt(6, entity.getId());
 	}
 

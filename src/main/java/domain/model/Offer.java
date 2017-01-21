@@ -8,8 +8,8 @@ public class Offer implements IHaveId {
 	private String title;
 	private String desc;
 	private Date uploaded;
-	private int seller_id;
-	private int car_id;
+	private Seller seller_id;
+	private Car car_id;
 	
 	public int getId() {
 		return id;
@@ -35,16 +35,16 @@ public class Offer implements IHaveId {
 	public void setUploaded(Date uploaded) {
 		this.uploaded = uploaded;
 	}
-	public int getSeller_id() {
+	public Seller getSeller_id() {
 		return seller_id;
 	}
-	public void setSeller_id(int seller_id) {
+	public void setSeller_id(Seller seller_id) {
 		this.seller_id = seller_id;
 	}
-	public int getCar_id() {
+	public Car getCar_id() {
 		return car_id;
 	}
-	public void setCar_id(int car_id) {
+	public void setCar_id(Car car_id) {
 		this.car_id = car_id;
 	}
 	
