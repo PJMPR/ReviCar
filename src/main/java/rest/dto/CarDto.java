@@ -1,22 +1,10 @@
-package domain.model;
+package rest.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
-@Table(name = "car")
-@NamedQueries({ 
-		@NamedQuery(name = "car.all", query = "SELECT c FROM Car c"),
-		@NamedQuery(name = "car.id", query = "SELECT c FROM Car c WHERE c.id=:id") })
-public class Car implements IHaveId {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+@XmlRootElement
+public class CarDto {
+	
 	private int id;
 	private String vehtype;
 	private String make;

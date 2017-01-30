@@ -1,22 +1,10 @@
-package domain.model;
+package rest.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
-@Table(name = "seller")
-@NamedQueries({ 
-		@NamedQuery(name = "seller.all", query = "SELECT s FROM Seller s"),
-		@NamedQuery(name = "seller.id", query = "SELECT s FROM Seller s WHERE s.id=:id") })
-public class Seller implements IHaveId {
+@XmlRootElement
+public class SellerDto {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String surname;
@@ -70,4 +58,3 @@ public class Seller implements IHaveId {
 	}
 	
 }
-

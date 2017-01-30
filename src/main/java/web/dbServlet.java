@@ -32,9 +32,18 @@ public class dbServlet extends HttpServlet {
 			Car car = (Car) session.getAttribute("car");
 			Offer offer = (Offer) session.getAttribute("offer");
 			catalog.sellers().add(seller);
+			catalog.saveAndClose();
+			int sellerId = catalog.sellers().getLastId();
+			seller.setId(sellerId);
 			catalog.cars().add(car);
+			catalog.saveAndClose();
+			int carId = catalog.cars().getLastId();
+			car.setId(carId);
+			offer.setSeller(seller);
+			offer.setCar(car);
 			catalog.offers().add(offer);
 			catalog.saveAndClose();
+			response.sendRedirect("index.html");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}		

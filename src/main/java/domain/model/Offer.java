@@ -2,14 +2,32 @@ package domain.model;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "offer")
+@NamedQueries({ 
+		@NamedQuery(name = "offer.all", query = "SELECT o FROM Offer o"),
+		@NamedQuery(name = "offer.id", query = "SELECT o FROM Offer o WHERE o.id=:id") })
 public class Offer implements IHaveId {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
 	private String desc;
 	private Date uploaded;
-	private Seller seller_id;
-	private Car car_id;
+	@OneToOne
+	private Seller seller;
+	@OneToOne
+	private Car car;
 	
 	public int getId() {
 		return id;
@@ -35,17 +53,17 @@ public class Offer implements IHaveId {
 	public void setUploaded(Date uploaded) {
 		this.uploaded = uploaded;
 	}
-	public Seller getSeller_id() {
-		return seller_id;
+	public Seller getSeller() {
+		return seller;
 	}
-	public void setSeller_id(Seller seller_id) {
-		this.seller_id = seller_id;
+	public void setSeller(Seller seller) {
+		this.seller = seller;
 	}
-	public Car getCar_id() {
-		return car_id;
+	public Car getCar() {
+		return car;
 	}
-	public void setCar_id(Car car_id) {
-		this.car_id = car_id;
+	public void setCar(Car car) {
+		this.car = car;
 	}
 	
 }

@@ -25,15 +25,11 @@ public class offerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		Seller seller = (Seller) session.getAttribute("seller");
-		Car car = (Car) session.getAttribute("car");
 
 		Offer offer = new Offer();
 		offer.setTitle(request.getParameter("title"));
 		offer.setDesc(request.getParameter("desc"));
 		offer.setUploaded(Date.valueOf(request.getParameter("uploaded")));
-		offer.setSeller_id(seller);
-		offer.setCar_id(car);
 		
 		session.setAttribute("offer", offer);
 		response.sendRedirect("final.jsp");

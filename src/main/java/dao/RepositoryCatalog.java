@@ -34,8 +34,7 @@ public class RepositoryCatalog implements IRepositoryCatalog{
 
 	public void saveAndClose() {
 		try{
-		uow.commit();
-		connection.close();
+			uow.commit();
 		}catch(SQLException ex){
 			ex.printStackTrace();
 		}

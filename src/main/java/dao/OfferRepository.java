@@ -19,8 +19,8 @@ public class OfferRepository extends RepositoryBase<Offer> implements IOfferRepo
 		insert.setString(1, entity.getTitle());
 		insert.setString(2, entity.getDesc());
 		insert.setDate(3, entity.getUploaded());
-		insert.setInt(4, entity.getSeller_id().getId());
-		insert.setInt(5, entity.getCar_id().getId());
+		insert.setInt(4, entity.getSeller().getId());
+		insert.setInt(5, entity.getCar().getId());
 	}
 
 	@Override
@@ -28,8 +28,8 @@ public class OfferRepository extends RepositoryBase<Offer> implements IOfferRepo
 		update.setString(1, entity.getTitle());
 		update.setString(2, entity.getDesc());
 		update.setDate(3, entity.getUploaded());
-		update.setInt(4, entity.getSeller_id().getId());
-		update.setInt(5, entity.getCar_id().getId());
+		update.setInt(4, entity.getSeller().getId());
+		update.setInt(5, entity.getCar().getId());
 		update.setInt(6, entity.getId());
 	}
 
@@ -45,19 +45,20 @@ public class OfferRepository extends RepositoryBase<Offer> implements IOfferRepo
 				+ "title VARCHAR(20),"
 				+ "desc VARCHAR(50),"
 				+ "uploaded DATE,"
-				+ "seller_id INT,"
-				+ "car_id INT"
-				+ ")";
+				+ "SELLER_ID INT,"
+				+ "CAR_ID INT,"
+                + "FOREIGN KEY (SELLER_ID) REFERENCES seller(id),"
+				+ "FOREIGN KEY (CAR_ID) REFERENCES car(id)" + ")";
 	}
 
 	@Override
 	protected String insertSql() {
-		return "INSERT INTO offer(title,desc,uploaded,seller_id,car_id) VALUES(?,?,?,?,?)";
+		return "INSERT INTO offer(title,desc,uploaded,SELLER_ID,CAR_ID) VALUES(?,?,?,?,?)";
 	}
 
 	@Override
 	protected String updateSql() {
-		return "UPDATE offer SET title=?, desc=?, uploaded=?, seller_id=?, car_id=? WHERE id=?";
+		return "UPDATE offer SET title=?, desc=?, uploaded=?, SELLER_ID=?, CAR_ID=? WHERE id=?";
 	}
 
 	public List<Offer> withPrice(int price) {
